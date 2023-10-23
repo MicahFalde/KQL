@@ -1,0 +1,5 @@
+#Example Functions:
+
+geo_info_from_ip_address()
+
+print ip_location=geo_info_from_ip_address('20.53.203.50')
