@@ -1,6 +1,8 @@
 = Okta 10-2023 -- Breach Indicators of Compromise
 
-These IoCs are related to ESET’s investigation on AceCryptor.
+These IoCs are related to Okta's Breach in October 2023. 
+
+Here are some ways you can search for them via KQL.
 
 The blog post with detailed analysis is available on Okta's website at
 https://sec.okta.com/harfiles
