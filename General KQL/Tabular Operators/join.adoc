@@ -2,38 +2,44 @@
 #Example of join types
 
 
----
 #(Default) Inner unique 
+---
 SigninLogs
 | project TimeGenerated, UserPrincipalName, AppDisplayName
 | join ( SigninLogs
 | sample-distinct 5 of AppDisplayName ) on AppDisplayName
-
+---
 #Inner 
+---
 SigninLogs
 | project TimeGenerated, UserPrincipalName, AppDisplayName
 | join kind=inner ( SigninLogs
 | sample-distinct 5 of AppDisplayName ) on AppDisplayName
-
+---
 #Left anti 
+---
 SigninLogs
 | project TimeGenerated, UserPrincipalName, AppDisplayName
 | join kind=leftanti ( SigninLogs
 | sample-distinct 5 of AppDisplayName ) on AppDisplayName
-
+---
 #Left semi
+---
 SigninLogs
+---
 | project TimeGenerated, UserPrincipalName, AppDisplayName
 | join kind=leftsemi ( SigninLogs
 | sample-distinct 5 of AppDisplayName ) on AppDisplayName
-
+---
 #Left outer 
+---
 SigninLogs
 | project TimeGenerated, UserPrincipalName, AppDisplayName
 | join kind=leftouter ( SigninLogs
 | sample-distinct 5 of AppDisplayName ) on AppDisplayName
-
+---
 #Full outer 
+---
 SigninLogs
 | project TimeGenerated, UserPrincipalName, AppDisplayName
 | join kind=full ( SigninLogs
