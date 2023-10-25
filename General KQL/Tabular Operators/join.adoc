@@ -3,6 +3,7 @@
 
 
 === (Default) Inner unique 
+
 ---
 SigninLogs
 | project TimeGenerated, UserPrincipalName, AppDisplayName
@@ -11,6 +12,7 @@ SigninLogs
 ---
 
 === Inner 
+
 ---
 SigninLogs
 | project TimeGenerated, UserPrincipalName, AppDisplayName
@@ -19,13 +21,15 @@ SigninLogs
 ---
 
 === Left anti 
+
 ---
 SigninLogs
 | project TimeGenerated, UserPrincipalName, AppDisplayName
 | join kind=leftanti ( SigninLogs
 | sample-distinct 5 of AppDisplayName ) on AppDisplayName
 ---
-#Left semi
+
+=== Left semi
 ---
 
 === SigninLogs
