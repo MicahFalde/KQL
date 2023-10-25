@@ -1,0 +1,11 @@
+//Take
+SigninLogs
+| take 10
+
+//Limit
+SigninLogs
+| limit 10
+
+//Take 10 and sort by x
+SigninLogs
+| top 10 by TimeGenerated

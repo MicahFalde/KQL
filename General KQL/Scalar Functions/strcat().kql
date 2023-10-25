@@ -1,0 +1,8 @@
+#Combine TimeGenerated - $Table
+search "*kustoking*"
+| extend NewColumn = strcat(TimeGenerated, " - ", $table)
+
+#Combine multiple Columns
+search "*kustoking*"
+| extend NewColumn1 = strcat(TimeGenerated, " - ", $table)
+    , NewColumn2 = strcat(TeamName, " - ", ChannelName)

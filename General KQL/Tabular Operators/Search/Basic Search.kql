@@ -1,7 +1,0 @@
-#Basic search
-search ("test123")
-| distinct $table
-
-#Search for multiple strings
-search ("test" or "test123")
-| distinct $table

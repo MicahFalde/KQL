@@ -1,0 +1,3 @@
+// count by AppDisplayName
+SigninLogs
+| summarize count() by AppDisplayName

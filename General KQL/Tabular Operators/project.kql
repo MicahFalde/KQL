@@ -1,0 +1,23 @@
+#Show columns
+search UserPrincipalName:"micahfalde@wewatch.cloud"
+| project UserPrincipalName, AppDisplayName, TimeGenerated
+
+#Show and create columns
+search UserPrincipalName:"micahfalde@wewatch.cloud"
+| project $table, Email = UserPrincipalName, ClientAppUsed, AppDisplayName, TimeGenerated
+
+#Show columns
+search UserPrincipalName:"micahfalde@wewatch.cloud"
+| project-keep $table, ClientAppUsed, AppDisplayName, TimeGenerated
+
+#Remove columns
+search UserPrincipalName:"micahfalde@wewatch.cloud"
+| project-away IPAddress
+
+#Rename one or more columns
+search UserPrincipalName:"micahfalde@wewatch.cloud"
+| project-rename Email = UserPrincipalName, Table = $table
+
+#Reorder columns
+search UserPrincipalName:"micahfalde@wewatch.cloud"
+| project-reorder TimeGenerated, UserPrincipalName, ClientAppUsed, AppDisplayName

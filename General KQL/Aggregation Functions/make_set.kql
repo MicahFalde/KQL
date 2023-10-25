@@ -1,0 +1,11 @@
+#Create a set of AppDisplayName 
+SigninLogs
+| summarize make_set(AppDisplayName) by UserPrincipalName
+
+#Create a set of AppDisplayName by User and Country
+SigninLogs
+| summarize make_set(AppDisplayName) by UserPrincipalName, Location
+
+#Show last record by AppDisplayName and UserPrincipalName
+SigninLogs
+| summarize arg_max(TimeGenerated, *) by UserPrincipalName, AppDisplayName

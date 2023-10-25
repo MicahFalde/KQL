@@ -1,0 +1,19 @@
+#Does work
+SigninLogs
+| where UserPrincipalName has "Micah"
+
+#Does not work
+SigninLogs
+| where UserPrincipalName has "Mic"
+
+#Does work
+SigninLogs
+| where UserPrincipalName contains "Mic"
+
+#Does not work
+SigninLogs
+| where UserPrincipalName contains_cs "Mic"
+
+#Multiple Values
+SigninLogs
+| where UserPrincipalName has_all("Micah", "log")

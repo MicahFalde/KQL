@@ -1,0 +1,7 @@
+#Show distinct
+SigninLogs
+| distinct UserPrincipalName
+
+#Take sample of distinct
+SigninLogs
+| sample-distinct 5 of AppDisplayName

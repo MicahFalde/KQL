@@ -1,0 +1,25 @@
+#Basic search
+search ("test123")
+| distinct $table
+
+#Search for multiple strings
+search ("test" or "test123")
+| distinct $table
+
+#Basic search for contains
+search "*log*"
+
+#Search for string as has
+search "log"
+
+#Search for string as prefix
+search "jo*"
+
+#Search for string as suffix
+search "*log.com"
+
+#Search in tables
+search in (OfficeActivity, SigninLogs, AAD*) "log"
+
+#Scan each column in all tables
+search UserPrincipalName:"micahfalde@wewatch.cloud"
